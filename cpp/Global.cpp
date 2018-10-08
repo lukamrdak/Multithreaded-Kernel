@@ -40,7 +40,7 @@ void Global::initialiseInterruptRoutine(){
 	asm pushf;
 	asm cli;
 	lock
-	Global::oldRoutine = getvect(0x08);		//TODO: treba li heksa ili obicna osmica
+	Global::oldRoutine = getvect(0x08);		
 	setvect(0x08, timer);					// 08: nova prekidna rutina
 	setvect(0x60, Global::oldRoutine);		// 60: stara prekidna rutina na 55ms
 #endif
